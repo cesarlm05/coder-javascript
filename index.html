@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome cdn link  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <link rel="stylesheet" href="./assets/styles/bootstrap.css">
+    <link rel="stylesheet" href="./assets/styles/main.css">
+    <title>My Portfolio</title>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <section class="header">
+            <div class="nav">
+                <div class="logo">
+                    <h3>César</h3>
+                </div>
+                <div class="nav-links">
+                    <ul>
+                        <li><a href="#hello">Hello</a></li>
+                        <li><a href="#calc">Calc</a></li>
+                        <li><a href="#boxes">Boxes</a></li>
+                    </ul>
+                </div>
+        </section>
+    </div>
+    <div class="container-fluid">
+        <section class="toggleMenu">
+            <div class="userBox">
+                <div class="imgBox">
+                    <img src="./assets/img/user.jpg" alt="User">
+                </div>
+                <p class="userName">César Luis</p>
+            </div>
+            <div class="menuToggle"></div>
+            <div class="navMenu">
+                <ul>
+                    <li><a href="#hello"><i class="fas fa-code"></i>Hello</a></li>
+                    <li><a href="#calc"><i class="fas fa-calculator"></i>Calc</a></li>
+                    <li><a href="#boxes"><i class="fas fa-box"></i>Boxes</a></li>
+                </ul>
+            </div>
+        </section>
+    </div>
+    <div class="container-fluid">
+        <section class="hello" id="hello">
+            <h1>JavaScripts</h1>
+            <div class="button">
+                <button class="btn">Hola mundo</button>
+            </div>
+        </section>
+    </div>
+    <div class="container-fluid">
+        <section class="calc" id="calc">
+            <h2>Calculadora</h2>
+            <div class="buttons container">
+                <div class="row align-items-center">
+                    <div class="col-xs-12 col-sm-6 col-md-3">
+                        <div class="justify-content-center calculator">
+                            <table class="table table-primary">
+                                <tr>
+                                    <td colspan="4">
+                                        <div id="historico"></div>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td colspan="4"><input type="text" name="display" id="display"
+                                            class="col-xs-12 col-sm-12 col-md-12"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" id="btn7" value="7" class="btn btn-secondary"></td>
+                                    <td><input type="button" id="btn8" value="8" class="btn btn-secondary"></td>
+                                    <td><input type="button" id="btn9" value="9" class="btn btn-secondary"></td>
+                                    <td><input type="button" id="btn_divide" value="/" class="btn btn-info"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" id="btn4" value="4" class="btn btn-secondary"></td>
+                                    <td><input type="button" id="btn5" value="5" class="btn btn-secondary"></td>
+                                    <td><input type="button" id="btn6" value="6" class="btn btn-secondary"></td>
+                                    <td><input type="button" id="btn_multiplica" value="*" class="btn btn-info">
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" id="btn1" value="1" class="btn btn-secondary"></td>
+                                    <td><input type="button" id="btn2" value="2" class="btn btn-secondary"></td>
+                                    <td><input type="button" id="btn3" value="3" class="btn btn-secondary"></td>
+                                    <td><input type="button" id="btn_resta" value="-" class="btn btn-info"></td>
+                                </tr>
+                                <tr>
+                                    <td><input type="button" id="btn0" value="0" class="btn btn-secondary"></td>
+                                    <td><input type="button" id="btn_igual" value="=" class="btn btn-info"></td>
+                                    <td><input type="button" id="btn_clear" value="C" class="btn btn-danger"></td>
+                                    <td><input type="button" id="btn_suma" value="+" class="btn btn-info"></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="container-fluid">
+        <section class="boxes" id="boxes">
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Tu peso en la Luna</h3>
+                    <p>Si quieres conocer tu peso en la Luna, nuestra calculadora online te permitirá conocer lo que
+                        pesarías en ella. Para saberlo sólo tienes que introducir lo que pesas aquí en la Tierra y
+                        pulsar sobre el botón de calcular, así conocerás automáticamente cómo influye la gravedad de la
+                        Luna sobre tu masa y es que recuerda, peso y masa no son las mismas magnitudes ya que el peso
+                        varía en función de la gravedad.
+                        </br> Por ejemplo, si un gatito pesa 3 Kilogramos en la Tierra, en la Luna pasaría a pesar sólo
+                        0,49 Kilogramos.
+                        </br> Sorprendente, ¿verdad? Averigua cuánto pesas en la Luna:</p>
+                </div>
+                <div class="box-body">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre" id="nombre" class="form-control">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido" id="apellido" class="form-control">
+                    <label for="peso">Tu peso en el planeta Tierra</label>
+                    <input type="text" name="peso" id="peso" class="form-control" placeholder="ingresa tú peso en Kg">
+                    <input type="button" value="Calcular" id="btnPeso" class="btn btn-info">
+                    <p>Respuesta:
+                        <span id="respuesta"></span>
+                    </p>
+                    <input type="button" value="Limpiar" id="btnLimpiar" class="btn btn-warning">
+                </div>
+                <div class="box">
+                    <div class="box-header">
+                        <h3 class="box-title">Calculá tu edad con la fecha de tu cumple</h3>
+                        <p>Si quieres conocer tu cumpleaños, nuestra calculadora online te permitirá conocer cuando lo
+                            es a partir de tu fecha de nacimiento.
+                            </br> Sorprendente, !!!¿No sabias cuando es tu cumple?¡¡¡</p>
+                    </div>
+                    <div class="box-body">
+                        <label for="nombre">Nombre</label>
+                        <input type="text" name="nombre-cumple" id="nombre-cumple" class="form-control">
+                        <label for="apellido">Apellido</label>
+                        <input type="text" name="apellido-cumple" id="apellido-cumple" class="form-control">
+                        <label for="peso">Fecha</label>
+                        <input type="date" name="fecha-cumple" id="fecha-cumple" class="form-control">
+                        <input type="button" value="Calcular" id="btn-cumple" class="btn btn-info">
+                        <p>Respuesta:
+                            <span id="respuesta-cumple"></span>
+                            <span id="dato-cumple"></span>
+                        </p>
+                        <input type="button" value="Limpiar" id="btn-limpiar-cumple" class="btn btn-warning">
+                        <p>
+                            <div class="countdown">
+                                <span id="time" class="time"></span>
+                                <span id="day" class="days"></span>
+                                <span id="hour" class="hours"></span>
+                                <span id="minute" class="minutes"></span>
+                                <span id="second" class="seconds"></span>
+                            </div>
+                        </p>
+                    </div>
+        </section>
+    </div>
+    <div class="container-fluid">
+        <section class="footer">
+            <div class="footer-content">
+                <div class="footer-content-left">
+                    <p>Copyright © 2022 César Luis</p>
+                </div>
+                <div class="footer-content-right">
+                    <p>All rights reserved</p>
+                </div>
+            </div>
+        </section>
+    </div>
+    <div class="scroll">
+        <a id="scroll-widget" href="#top"><i class="fas fa-level-up-alt" alt="scroll"></i></a>
+    </div>
+    <script src="./assets/scripts/main.js"></script>
+    <script src="./assets/scripts/bootstrap.js"></script>
+</body>
+
+</html>
