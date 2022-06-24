@@ -57,7 +57,7 @@
     <div class="container-fluid">
         <section class="calc" id="calc">
             <h2>Calculadora</h2>
-            <div class="buttons container">
+            <div class="buttons container-fluid">
                 <div class="row align-items-center">
                     <div class="col-xs-12 col-sm-6 col-md-3">
                         <div class="justify-content-center calculator">
@@ -130,36 +130,66 @@
                     </p>
                     <input type="button" value="Limpiar" id="btnLimpiar" class="btn btn-warning">
                 </div>
-                <div class="box">
-                    <div class="box-header">
-                        <h3 class="box-title">Calculá tu edad con la fecha de tu cumple</h3>
-                        <p>Si quieres conocer tu cumpleaños, nuestra calculadora online te permitirá conocer cuando lo
-                            es a partir de tu fecha de nacimiento.
-                            </br> Sorprendente, !!!¿No sabias cuando es tu cumple?¡¡¡</p>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Calculá tu edad con la fecha de tu cumple</h3>
+                    <p>Si quieres conocer tu cumpleaños, nuestra calculadora online te permitirá conocer cuando lo
+                        es a partir de tu fecha de nacimiento.
+                        </br> Sorprendente, !!!¿No sabias cuando es tu cumple?¡¡¡</p>
+                </div>
+                <div class="box-body">
+                    <label for="nombre">Nombre</label>
+                    <input type="text" name="nombre-cumple" id="nombre-cumple" class="form-control">
+                    <label for="apellido">Apellido</label>
+                    <input type="text" name="apellido-cumple" id="apellido-cumple" class="form-control">
+                    <label for="peso">Fecha</label>
+                    <input type="date" name="fecha-cumple" id="fecha-cumple" class="form-control">
+                    <input type="button" value="Calcular" id="btn-cumple" class="btn btn-info">
+                    <p>Respuesta:
+                        <span id="respuesta-cumple"></span>
+                        <span id="dato-cumple"></span>
+                    </p>
+                    <input type="button" value="Limpiar" id="btn-limpiar-cumple" class="btn btn-warning">
+                    <p>
+                    <div class="countdown">
+                        <span id="time" class="time"></span>
+                        <span id="day" class="days"></span>
+                        <span id="hour" class="hours"></span>
+                        <span id="minute" class="minutes"></span>
+                        <span id="second" class="seconds"></span>
                     </div>
-                    <div class="box-body">
-                        <label for="nombre">Nombre</label>
-                        <input type="text" name="nombre-cumple" id="nombre-cumple" class="form-control">
-                        <label for="apellido">Apellido</label>
-                        <input type="text" name="apellido-cumple" id="apellido-cumple" class="form-control">
-                        <label for="peso">Fecha</label>
-                        <input type="date" name="fecha-cumple" id="fecha-cumple" class="form-control">
-                        <input type="button" value="Calcular" id="btn-cumple" class="btn btn-info">
-                        <p>Respuesta:
-                            <span id="respuesta-cumple"></span>
-                            <span id="dato-cumple"></span>
-                        </p>
-                        <input type="button" value="Limpiar" id="btn-limpiar-cumple" class="btn btn-warning">
-                        <p>
-                            <div class="countdown">
-                                <span id="time" class="time"></span>
-                                <span id="day" class="days"></span>
-                                <span id="hour" class="hours"></span>
-                                <span id="minute" class="minutes"></span>
-                                <span id="second" class="seconds"></span>
-                            </div>
-                        </p>
+                    </p>
+                </div>
+            </div>
+            <div class="box">
+                <div class="box-header">
+                    <h3 class="box-title">Clacula tus gastos de viaje</h3>
+                    <p>Nuestra calculadora te permite estimar tus gastos para tu proximo viaje.</p>
+                </div>
+                <div class="box-body">
+                    <div class="vacation container-fluid">
+                        <form class="frmVacation" id="vacationCalc">
+                            <input type="text" placeholder="Destiny" id="destiny" required />
+                            <input type="number" placeholder="Budget" id="budget" required />
+                            <input type="number" placeholder="Acomodation" id="acomodation" required />
+                            <input type="number" placeholder="Transport " id="transport" required />
+                            <input type="number" placeholder="Food" id="food" required />
+                            <input type="submit" value="Calculate" class="btnVacation btn btn-info" />
+                        </form>
                     </div>
+                    <div class="box-footer container-fluid">
+                        <div class="icons">
+                            <h5><i class="icon fas fa-plane"></i></h5>
+                            <h5><i class="icon fas fa-wallet"></i></h5>
+                            <h5><i class="icon fas fa-money-bill-wave-alt"></i></h5>
+                        </div>
+                        <div class="data container-fluid">
+                            <span class="result" id="result"></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </section>
     </div>
     <div class="container-fluid">

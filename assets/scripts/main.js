@@ -6,6 +6,9 @@ btn.addEventListener("click", () => {
   // @ts-ignore
   alert("Hola mundo");
 });
+
+// NavBar Toggle.
+
 // @ts-ignore
 let menuToggle = document.querySelector(".menuToggle");
 // @ts-ignore
@@ -14,6 +17,9 @@ let toggleMenu = document.querySelector(".toggleMenu");
 menuToggle.addEventListener("click", () => {
   toggleMenu.classList.toggle("active");
 });
+
+
+// Calculadora.
 
 // @ts-ignore
 const btn1 = document.getElementById("btn1"),
@@ -156,6 +162,10 @@ btnIgual.addEventListener("click", () => {
   }
 });
 
+
+// Box calculadora de tu peso en otro planeta.
+
+
 //Peso en la Luna = (Peso en la Tierra/9,81m/s2) * 1,622m/s2
 //Peso en la Tierra = (Peso en la Luna/1,622m/s2) * 9,81m/s2
 
@@ -241,6 +251,9 @@ btnLimpiar.addEventListener("click", () => {
   pesoTierra.value = "";
 });
 
+
+// Box calculadora de fecha de cumpleaños.
+
 // @ts-ignore
 const nombreCumple = document.getElementById("nombre-cumple");
 // @ts-ignore
@@ -269,7 +282,7 @@ btnCumple.addEventListener("click", () => {
       "tu edad es " +
       edad() +
       " años.";
-    dato(edad())
+    dato(edad());
     timeCountDown();
   } else {
     // @ts-ignore
@@ -299,7 +312,7 @@ const secondNode = document.getElementById("second");
 // @ts-ignore
 const nextCumple = () => new Date.getFullYear() + edad();
 // @ts-ignore
-const yearCumple = () => new Date('January 01' + nextCumple);
+const yearCumple = () => new Date("January 01" + nextCumple);
 // @ts-ignore
 const formatDate = (time) => (time > 10 ? time : "0" + time);
 
@@ -316,15 +329,23 @@ const timeCountDown = () => {
   const minutes = Math.floor(timeDifference / 60) % 60;
   const seconds = Math.floor(timeDifference) % 60;
   //console.log(days, hours, minutes, seconds);
-  time.innerHTML = "Tu edad en " + formatDate(days) + " días, " + formatDate(hours) + " horas, " + formatDate(minutes) + " minutos y " + formatDate(seconds) + " segundos!";
+  time.innerHTML =
+    "Tu edad en " +
+    formatDate(days) +
+    " días, " +
+    formatDate(hours) +
+    " horas, " +
+    formatDate(minutes) +
+    " minutos y " +
+    formatDate(seconds) +
+    " segundos!";
   //dayNode.innerHTML = days;
   //hourthNode.innerHTML = hours;
   //minuteNode.innerHTML = minutes;
   //secondNode.innerHTML = seconds;
-}
+};
 
 //setInterval(timeCountDown, 1000);
-
 
 function validationCumple() {
   // @ts-ignore
@@ -388,4 +409,65 @@ function impares(edad) {
     }
   }
   return contador;
+}
+
+// Box calculadora de vacaciones.
+
+// @ts-ignore
+let vacationCalc = document.getElementById("vacationCalc");
+// @ts-ignore
+let destiny = document.getElementById("destiny"),
+  // @ts-ignore
+  budget = document.getElementById("budget"),
+  // @ts-ignore
+  acomodation = document.getElementById("acomodation"),
+  // @ts-ignore
+  transport = document.getElementById("transport"),
+  // @ts-ignore
+  food = document.getElementById("food"),
+  // @ts-ignore
+  btnVacation = document.getElementById("btnVacation");
+
+vacationCalc.addEventListener("submit", execut);
+
+function getValue(){
+    // @ts-ignore
+    let destino = destiny.value,
+    presupuesto = parseFloat(budget.value),
+    alojamiento = parseFloat(acomodation.value),
+    transporte = parseFloat(transport.value),
+    comida = parseFloat(food.value);
+    return {destino, presupuesto, alojamiento, transporte, comida}
+}
+
+// @ts-ignore
+function execut(e) {
+  e.preventDefault();
+  calcExpenses();
+}
+
+function calcExpenses() {
+  const {destino, presupuesto, alojamiento, transporte, comida} = getValue();
+  let gastos = alojamiento + transporte + comida;
+  let balance = presupuesto - gastos;  
+  UI(destino, presupuesto, balance);
+}
+
+// @ts-ignore
+function UI(destino, presupuesto, balance) {
+  // @ts-ignore
+  let result = document.getElementById('result');
+  // @ts-ignore
+  let dataPrint = document.createElement('div');
+  
+  dataPrint.innerHTML = "<h6>" + destino + "</h6> " + presupuesto + " " + balance;
+
+  console.log(dataPrint)
+  result.appendChild(dataPrint);
+  reset();
+}
+
+function reset(){
+  // @ts-ignore
+  document.getElementById('vacationCalc').reset();
 }

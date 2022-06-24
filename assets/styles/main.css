@@ -229,7 +229,7 @@ body {
 
 .boxes {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
   width: 100%;
@@ -294,6 +294,58 @@ body {
   background: #406cff;
   color: #fff;
   transition: 0.5s;
+}
+
+.vacation {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.frmVacation {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-color: #efefef;
+  padding: 20px;
+  color: #fff;
+  border-radius: 20px;
+}
+.frmVacation input::placeholder {
+  width: 15em;
+  margin: 3px;
+  height: 2em;
+  color: #406cff;
+}
+.icons {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: 1em;
+}
+.icon {
+  font-size: 1.5em;  
+  border-radius: 50%;
+  padding: 40px;
+}
+.fa-plane {
+  color: #406cff;
+}
+.fa-wallet {
+  color: #acb124;
+}
+.fa-money-bill-wave-alt{
+  color: #20bde0;
+}
+.box-footer .data {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  margin-top: -1em;
+}
+.box-footer .data h6 {
+  text-align: center;
 }
 
 /* Scroll Widget - Start */
