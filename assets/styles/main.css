@@ -202,29 +202,13 @@ body {
   align-items: center;
   justify-content: center;
   height: 100vh;
+  width: 80%;
   background: #fff;
   color: #406cff;
   font-size: 30px;
   font-weight: bold;
   text-align: center;
   padding: 20px;
-}
-
-.calc {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  padding: 10px;
-  color: #406cff;
-}
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  width: 100%;
 }
 
 .boxes {
@@ -290,44 +274,23 @@ body {
   margin-top: 15px;
 }
 
+.boxes .box .box-body .frmVacation input{
+  width: 100%;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
 .boxes .box .box-body input:hover {
   background: #406cff;
   color: #fff;
   transition: 0.5s;
 }
 
-.vacation {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-}
-.frmVacation {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-color: #efefef;
-  padding: 20px;
-  color: #fff;
-  border-radius: 20px;
-}
-.frmVacation input::placeholder {
-  width: 15em;
-  margin: 3px;
-  height: 2em;
-  color: #406cff;
-}
-.icons {
-  width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-  margin-top: 1em;
-}
 .icon {
   font-size: 1.5em;  
   border-radius: 50%;
   padding: 40px;
+  text-align: center;
 }
 .fa-plane {
   color: #406cff;
@@ -338,14 +301,13 @@ body {
 .fa-money-bill-wave-alt{
   color: #20bde0;
 }
+
 .box-footer .data {
+  width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: space-around;
-  margin-top: -1em;
-}
-.box-footer .data h6 {
-  text-align: center;
+  margin-top: 1em;
 }
 
 /* Scroll Widget - Start */

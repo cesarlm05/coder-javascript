@@ -58,8 +58,8 @@
         <section class="calc" id="calc">
             <h2>Calculadora</h2>
             <div class="buttons container-fluid">
-                <div class="row align-items-center">
-                    <div class="col-xs-12 col-sm-6 col-md-3">
+                <div class="row">
+                    <div class="col-xs-12 col-sm-6 col-md-6">
                         <div class="justify-content-center calculator">
                             <table class="table table-primary">
                                 <tr>
@@ -107,21 +107,31 @@
         <section class="boxes" id="boxes">
             <div class="box">
                 <div class="box-header">
-                    <h3 class="box-title">Tu peso en la Luna</h3>
-                    <p>Si quieres conocer tu peso en la Luna, nuestra calculadora online te permitirá conocer lo que
-                        pesarías en ella. Para saberlo sólo tienes que introducir lo que pesas aquí en la Tierra y
-                        pulsar sobre el botón de calcular, así conocerás automáticamente cómo influye la gravedad de la
-                        Luna sobre tu masa y es que recuerda, peso y masa no son las mismas magnitudes ya que el peso
+                    <h3 class="box-title">Tu peso en otro planeta</h3>
+                    <p>Si quieres conocer tu peso en otros planetas, nuestra calculadora online te permitirá conocer lo que
+                        pesarías en cualquiera ellos. Para saberlo sólo tienes que introducir lo que pesas aquí en la Tierra y
+                        pulsar sobre el botón de calcular, así conocerás automáticamente cómo influye la gravedad de otro
+                        planeta sobre tu masa y es que recuerda, peso y masa no son las mismas magnitudes ya que el peso
                         varía en función de la gravedad.
                         </br> Por ejemplo, si un gatito pesa 3 Kilogramos en la Tierra, en la Luna pasaría a pesar sólo
                         0,49 Kilogramos.
-                        </br> Sorprendente, ¿verdad? Averigua cuánto pesas en la Luna:</p>
+                        </br> Sorprendente, ¿verdad? Averigua cuánto pesas en otros planetas:</p>
                 </div>
                 <div class="box-body">
                     <label for="nombre">Nombre</label>
                     <input type="text" name="nombre" id="nombre" class="form-control">
                     <label for="apellido">Apellido</label>
                     <input type="text" name="apellido" id="apellido" class="form-control">
+                    <label for="planeta">Selecciona un planeta</label>
+                    <select name="planeta" id="planeta">
+                        <option value="luna">Luna</option>
+                        <option value="marte" selected>Marte</option>
+                        <option value="jupiter">Júpiter</option>
+                        <option value="saturno">Saturno</option>
+                        <option value="urano">Urano</option>
+                        <option value="neptuno">Neptuno</option>
+                        <option value="pluton">Pluton</option>
+                    </select>
                     <label for="peso">Tu peso en el planeta Tierra</label>
                     <input type="text" name="peso" id="peso" class="form-control" placeholder="ingresa tú peso en Kg">
                     <input type="button" value="Calcular" id="btnPeso" class="btn btn-info">
@@ -168,7 +178,7 @@
                     <p>Nuestra calculadora te permite estimar tus gastos para tu proximo viaje.</p>
                 </div>
                 <div class="box-body">
-                    <div class="vacation container-fluid">
+                    <div class="vacation">
                         <form class="frmVacation" id="vacationCalc">
                             <input type="text" placeholder="Destiny" id="destiny" required />
                             <input type="number" placeholder="Budget" id="budget" required />
@@ -178,14 +188,11 @@
                             <input type="submit" value="Calculate" class="btnVacation btn btn-info" />
                         </form>
                     </div>
-                    <div class="box-footer container-fluid">
-                        <div class="icons">
-                            <h5><i class="icon fas fa-plane"></i></h5>
-                            <h5><i class="icon fas fa-wallet"></i></h5>
-                            <h5><i class="icon fas fa-money-bill-wave-alt"></i></h5>
-                        </div>
-                        <div class="data container-fluid">
-                            <span class="result" id="result"></span>
+                    <div class="box-footer">
+                        <div class="data">
+                            <h5><i class="icon fas fa-plane"><span class="resultDestiny"></span></i></h5>
+                            <h5><i class="icon fas fa-wallet"><span class="resultBudget"></span></i></h5>
+                            <h5><i class="icon fas fa-money-bill-wave-alt"><span class="resultBalance"></span></i></h5>
                         </div>
                     </div>
                 </div>

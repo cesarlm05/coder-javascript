@@ -18,7 +18,6 @@ menuToggle.addEventListener("click", () => {
   toggleMenu.classList.toggle("active");
 });
 
-
 // Calculadora.
 
 // @ts-ignore
@@ -139,6 +138,10 @@ btnDiv.addEventListener("click", () => {
 
 btnIgual.addEventListener("click", () => {
   //console.log("igual");
+  calcular();
+});
+
+function calcular() {
   let suma = display.value.indexOf("+");
   let resta = display.value.indexOf("-");
   let multiplica = display.value.indexOf("*");
@@ -160,32 +163,9 @@ btnIgual.addEventListener("click", () => {
     let resultado = parseInt(valor[0]) / parseInt(valor[1]);
     display.value = resultado;
   }
-});
-
+}
 
 // Box calculadora de tu peso en otro planeta.
-
-
-//Peso en la Luna = (Peso en la Tierra/9,81m/s2) * 1,622m/s2
-//Peso en la Tierra = (Peso en la Luna/1,622m/s2) * 9,81m/s2
-
-//Peso en Marte= (Peso en la Tierra/9.81m/s2) * 3.711m/s2
-//Peso en Tierra = (Peso en Marte/3.711m/s2) * 9.81m/s2
-
-//Peso en Júpiter= (Peso en la Tierra/9.81m/s2) * 24.79m/s2
-//Peso en Tierra = (Peso en Júpiter/24.79m/s2) * 9.81m/s2
-
-//Peso en Saturno= (Peso en la Tierra/9.81m/s2) * 10.44m/s2
-//Peso en Tierra = (Peso en Saturno/10.44m/s2) * 9.81m/s2
-
-//Peso en Urano= (Peso en la Tierra/9.81m/s2) * 8.69m/s2
-//Peso en Tierra = (Peso en Urano/8.69m/s2) * 9.81m/s2
-
-//Peso en Neptuno= (Peso en la Tierra/9.81m/s2) * 11.15m/s2
-//Peso en Tierra = (Peso en Neptuno/11.15m/s2) * 9.81m/s2
-
-//Peso en Pluton= (Peso en la Tierra/9.81m/s2) * 0.858m/s2
-//Peso en Tierra = (Peso en Pluton/0.858m/s2) * 9.81m/s2
 
 // @ts-ignore
 const nombre = document.getElementById("nombre");
@@ -196,9 +176,39 @@ const btnPeso = document.getElementById("btnPeso");
 // @ts-ignore
 const btnLimpiar = document.getElementById("btnLimpiar");
 // @ts-ignore
+let planetas = document.getElementById("planeta");
+// @ts-ignore
 let pesoTierra = document.getElementById("peso");
 // @ts-ignore
 let respuesta = document.getElementById("respuesta");
+
+function selectPlanet() {
+  let planeta = planetas.value;
+  let peso;
+  switch (planeta) {
+    case "luna":
+      return (peso = pesoLunar());
+      break;
+    case "marte":
+      return (peso = pesoMarciano());
+      break;
+    case "jupiter":
+      return (peso = pesoJoviano());
+      break;
+    case "saturno":
+      return (peso = pesoSaturniano());
+      break;
+    case "urano":
+      return (peso = pesoUraniano());
+      break;
+    case "neptuno":
+      return (peso = pesoNeptuniano());
+      break;
+    case "pluton":
+      return (peso = pesoPlutoniano());
+      break;
+  }
+}
 
 btnPeso.addEventListener("click", () => {
   // @ts-ignore
@@ -210,9 +220,12 @@ btnPeso.addEventListener("click", () => {
       "Hola! terricola... " +
       `${nombre} ${apellido}` +
       " " +
-      "tu peso en la Luna es: " +
-      pesoLunar() +
+      "tu peso en " +
+      planetas.value +
+      " es: " +
+      selectPlanet() +
       "kg";
+    //console.log(selectPlanet());
   } else {
     // @ts-ignore
     alert("Ingrese su nombre y apellido en su planeta!");
@@ -223,6 +236,42 @@ function pesoLunar() {
   let peso = pesoTierra.value;
   //Peso en la Luna = (Peso en la Tierra/9,81m/s2) * 1,622m/s2
   let pesoLunar = (peso / 9.81) * 1.622;
+  return pesoLunar.toFixed(2); //Redondea el resultado a 2 decimales
+}
+function pesoMarciano() {
+  let peso = pesoTierra.value;
+  //Peso en Marte= (Peso en la Tierra/9.81m/s2) * 3.711m/s2
+  let pesoLunar = (peso / 9.81) * 3.711;
+  return pesoLunar.toFixed(2); //Redondea el resultado a 2 decimales
+}
+function pesoJoviano() {
+  let peso = pesoTierra.value;
+  //Peso en Júpiter= (Peso en la Tierra/9.81m/s2) * 24.79m/s2
+  let pesoLunar = (peso / 9.81) * 24.79;
+  return pesoLunar.toFixed(2); //Redondea el resultado a 2 decimales
+}
+function pesoSaturniano() {
+  let peso = pesoTierra.value;
+  //Peso en Saturno= (Peso en la Tierra/9.81m/s2) * 10.44m/s2
+  let pesoLunar = (peso / 9.81) * 10.44;
+  return pesoLunar.toFixed(2); //Redondea el resultado a 2 decimales
+}
+function pesoUraniano() {
+  let peso = pesoTierra.value;
+  //Peso en Urano= (Peso en la Tierra/9.81m/s2) * 8.69m/s2
+  let pesoLunar = (peso / 9.81) * 8.69;
+  return pesoLunar.toFixed(2); //Redondea el resultado a 2 decimales
+}
+function pesoNeptuniano() {
+  let peso = pesoTierra.value;
+  //Peso en Neptuno= (Peso en la Tierra/9.81m/s2) * 11.15m/s2
+  let pesoLunar = (peso / 9.81) * 11.15;
+  return pesoLunar.toFixed(2); //Redondea el resultado a 2 decimales
+}
+function pesoPlutoniano() {
+  let peso = pesoTierra.value;
+  //Peso en Pluton= (Peso en la Tierra/9.81m/s2) * 0.858m/s2
+  let pesoLunar = (peso / 9.81) * 0.858;
   return pesoLunar.toFixed(2); //Redondea el resultado a 2 decimales
 }
 
@@ -250,7 +299,6 @@ btnLimpiar.addEventListener("click", () => {
   respuesta.innerHTML = "";
   pesoTierra.value = "";
 });
-
 
 // Box calculadora de fecha de cumpleaños.
 
@@ -426,18 +474,24 @@ let destiny = document.getElementById("destiny"),
   // @ts-ignore
   food = document.getElementById("food"),
   // @ts-ignore
-  btnVacation = document.getElementById("btnVacation");
+  btnVacation = document.getElementById("btnVacation"),
+  // @ts-ignore
+  resultDestiny = document.querySelector(".resultDestiny"),
+  // @ts-ignore
+  resultBudget = document.querySelector(".resultBudget"),
+  // @ts-ignore
+  resultBalance = document.querySelector(".resultBalance");
 
 vacationCalc.addEventListener("submit", execut);
 
-function getValue(){
-    // @ts-ignore
-    let destino = destiny.value,
+function getValue() {
+  // @ts-ignore
+  let destino = destiny.value,
     presupuesto = parseFloat(budget.value),
     alojamiento = parseFloat(acomodation.value),
     transporte = parseFloat(transport.value),
     comida = parseFloat(food.value);
-    return {destino, presupuesto, alojamiento, transporte, comida}
+  return { destino, presupuesto, alojamiento, transporte, comida };
 }
 
 // @ts-ignore
@@ -447,27 +501,24 @@ function execut(e) {
 }
 
 function calcExpenses() {
-  const {destino, presupuesto, alojamiento, transporte, comida} = getValue();
+  const { destino, presupuesto, alojamiento, transporte, comida } = getValue();
   let gastos = alojamiento + transporte + comida;
-  let balance = presupuesto - gastos;  
+  let balance = presupuesto - gastos;
   UI(destino, presupuesto, balance);
 }
 
 // @ts-ignore
 function UI(destino, presupuesto, balance) {
   // @ts-ignore
-  let result = document.getElementById('result');
+  let result = document.getElementById("result");
   // @ts-ignore
-  let dataPrint = document.createElement('div');
-  
-  dataPrint.innerHTML = "<h6>" + destino + "</h6> " + presupuesto + " " + balance;
-
-  console.log(dataPrint)
-  result.appendChild(dataPrint);
+  resultDestiny.innerHTML = "</br>" + destino;
+  resultBudget.innerHTML = "</br>" + presupuesto;
+  resultBalance.innerHTML = "</br>" + balance;
   reset();
 }
 
-function reset(){
+function reset() {
   // @ts-ignore
-  document.getElementById('vacationCalc').reset();
+  document.getElementById("vacationCalc").reset();
 }
