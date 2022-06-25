@@ -315,6 +315,84 @@ body {
   margin-top: 1em;
 }
 
+/* Box Player */
+.box .box-body .input-data {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+.box .box-body .input-data .texto {
+  font-size: 20px;
+}
+.box .box-body .input-data #datos {
+  font-size: 30px;
+  text-transform: uppercase;
+  border-radius: 50px;
+}
+.box .box-body .player {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 10px;
+}
+.box .box-body .player .buttons-media {
+  text-align: center;
+}
+.box .box-body .player .buttons-media i {
+  color: #406cff;
+}
+.box .box-body .player .buttons-media i:hover {
+  cursor: pointer;
+}
+#show {
+  font-size: 50px;
+  color: #406cff;
+  border-radius: 50px;
+  padding: 11px 19px;
+  margin: 0 40px;
+  animation: animate 3s linear infinite;
+  text-shadow: 0 0 50px #6f91ffd5,
+  0 0 20px #6f91ffd5;
+}
+#play,
+#stop,
+#pause {
+  font-size: 30px;
+  box-shadow: 2px 2px 2px #406cff,
+  10px 1px 12px #406cff,
+  2px 2px 10px #406cff,
+  2px 2px 3px #406cff,
+  inset 2px 2px 10px #406cff,
+  inset 2px 2px 10px #406cff,
+  inset 2px 2px 10px #406cff,
+  inset 2px 2px 10px #406cff;
+  border-radius: 50px;
+  padding: 11px 19px;
+  margin: 0 40px;
+  animation: animate 3s linear infinite;
+  text-shadow: 0 0 50px #6f91ffd5,
+  0 0 20px #6f91ffd5;
+}
+#play {
+  animation-delay: 00.3s;
+}
+#stop {
+  animation-delay: 00.5s;
+}
+#pause {
+  animation-delay: 00.7s;
+}
+@keyframes animate {
+  from{
+    filter: hue-rotate(0deg);
+  }
+  to {
+    filter: hue-rotate(360deg);
+  }
+}
+
 /* Scroll Widget - Start */
 .scroll {
   position: fixed;
@@ -365,4 +443,28 @@ body {
   width: 100%;
   padding: 10px;
   color: #406cff;
+  margin-top: 10px;
+}
+.footer .footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 10px;
+}
+.footer .footer-content .footer-media {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  text-align: center;
+  gap: 10px;
+}
+#instagram,
+#freecodecamp,
+#github,
+#linkedin {
+  font-size: 30px;
+  border-radius: 50px;
+  padding: 11px 19px;
+  margin: 0 40px;
 }
