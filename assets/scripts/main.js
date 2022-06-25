@@ -1,3 +1,6 @@
+//
+// Alumno: César Medina
+//
 //@ts-ignore
 const btn = document.querySelector(".btn");
 // buton click event
